@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #test {
+            width: 500px;
+        }
+    </style>
+    <link rel="stylesheet" href="testPublic/ueditor.css?v=${feVersion!'0'}">
+
+</head>
+<body>
+    <div id="test">
+        <script id="editor" type="text/plain" class="help-block" style="width:100%;min-height:300px;"></script>
+     </div>
+</body>
+         <script type="text/javascript" src="testPublic/jquery.min.js"></script>
+     <script type="text/javascript" src="testPublic/ueditor.config.js?v=${feVersion!'0'}"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="testPublic/ueditor.all.js?v=${feVersion!'0'}"></script>
+        <!-- 语言包文件(建议手动加载语言包，避免在ie下，因为加载语言失败导致编辑器加载失败) -->
+        <script type="text/javascript" src="testPublic/zh-cn.js?v=${feVersion!'0'}"></script>
+        <script>
+            var editor = UE.getEditor('editor', {
+                initialFrameHeight: 400
+            });
+
+            // 初始化富文本框
+            editor.ready(function () {
+                var content = $('.ihd_content').text();
+                if (content != "") {
+                    editor.setContent(content);
+                }
+            });
+        </script>
+</html>

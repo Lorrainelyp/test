@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .max{width:100%;height:auto;}
+        .min{width:100px;height:auto;}
+    </style>
+</head>
+<body>
+<html>
+
+<img id='img' class='min' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504783533770&di=d2eac00e0089b22c0c322505e2cfd0df&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201207%2F13%2F20120713191526_sQW8N.thumb.224_0.jpeg'>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#img').click(function(){
+        $(this).toggleClass('min');
+        $(this).toggleClass('max');
+    });
+</script>
+</body>
+</html>

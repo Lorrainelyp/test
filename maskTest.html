@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>maskTest</title>
+    <style type="text/css">
+        .a {
+            width:100px;
+            height:100px;
+            position:relative;
+        }
+
+        .a img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .b {
+            width:100%;
+            height:100%;
+            background:url("../../_assets/images/phone1.png");
+            background-color:blue;
+            filter:Alpha(Opacity=60);
+            background: rgba(0, 0, 0, .6);
+            opacity:0.6;
+            position:absolute;
+            left:0;
+            bottom:0;
+            display:none
+        }
+
+        .border-test {
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            border:1px #ccc solid;
+            border-radius: 50%;
+        }
+
+        .border-test-content {
+            text-align: center;
+            height: 98px;
+            width: 98px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #98a6ad;
+
+        }
+    </style>
+</head>
+<body>
+<div class="a">
+    <img src="../../_assets/images/logo.png" />
+    <div class="b" >
+        这里是图片的名字
+    </div>
+</div>
+
+<div class="border-test">
+    <div class="border-test-content">
+        <span>+</span>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".a").hover(function(){
+            $(this).find(".b").slideDown(0);
+        },function(){
+            $(this).find(".b").slideUp(0);
+        });
+    });
+</script>
+</body>
+
+</html>

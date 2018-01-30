@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .container-fluid {
+            padding: 20px;
+        }
+        .box {
+            margin-bottom: 20px;
+            float: left;
+            width: 20%;
+        }
+        .box img {
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+<ul id="masonry" class="container-fluid">
+    <li class="box"><img src="https://ihd.image.alimmdn.com/ihudong/local/66666666/201712/9b930d26-5741-4a77-85f1-03ab7cb7ac36"></li>
+    <li class="box"><img src="https://ihd.image.alimmdn.com/ihudong/local/66666666/201712/9b930d26-5741-4a77-85f1-03ab7cb7ac36"></li>
+    <li class="box"><img src="http://i.imgur.com/iFBSB1t.jpg"></li>
+
+
+    <li class="box"><img src="https://ihd.image.alimmdn.com/142393cf-224b-457b-8aab-6f17b07e3bde"></li>
+    <li class="box"><img src="https://ihd.image.alimmdn.com/ihudong/local/66666666/201712/9b930d26-5741-4a77-85f1-03ab7cb7ac36"></li>
+    <li class="box"><img src="https://ihd.image.alimmdn.com/ihudong/local/66666666/201712/9b930d26-5741-4a77-85f1-03ab7cb7ac36"></li>
+    <li class="box"><img src="http://i.imgur.com/iFBSB1t.jpg"></li>
+
+    <li class="box"><img src="https://ihd.image.alimmdn.com/ihudong/local/66666666/201712/9b930d26-5741-4a77-85f1-03ab7cb7ac36"></li>
+    <li class="box"><img src="https://ihd.image.alimmdn.com/ihudong/local/66666666/201712/9b930d26-5741-4a77-85f1-03ab7cb7ac36"></li>
+    <li class="box"><img src="https://ihd.image.alimmdn.com/142393cf-224b-457b-8aab-6f17b07e3bde"></li>
+
+    <li class="box"><img src="https://ihd.image.alimmdn.com/142393cf-224b-457b-8aab-6f17b07e3bde"></li>
+    <li class="box"><img src="http://i.imgur.com/iFBSB1t.jpg"></li>
+    <li class="box"><img src="http://i.imgur.com/iFBSB1t.jpg"></li>
+
+    <li class="box"><img src="https://ihd.image.alimmdn.com/ihudong/local/66666666/201712/9b930d26-5741-4a77-85f1-03ab7cb7ac36"></li>
+    <li class="box"><img src="http://i.imgur.com/iFBSB1t.jpg"></li>
+
+    <li class="box"><img src="https://ihd.image.alimmdn.com/142393cf-224b-457b-8aab-6f17b07e3bde"></li>
+    <li class="box"><img src="http://i.imgur.com/iFBSB1t.jpg"></li>
+    <li class="box"><img src="http://i.imgur.com/iFBSB1t.jpg"></li>
+
+
+</ul>
+</body>
+<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://jq22.qiniudn.com/masonry-docs.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var $container = $('#masonry');
+        $container.imagesLoaded(function() {
+            $container.masonry({
+                itemSelector: '.box',
+                gutter: 20,
+                isAnimated: true,
+            });
+        });
+    });
+</script>
+</html>

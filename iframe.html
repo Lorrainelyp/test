@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{ padding: 0; margin: 0;}
+    </style>
+</head>
+<body>
+<div class="test" id="test"  style="width: 100%;">
+    <iframe name="ifr" id="ifr" src="iframe.html" frameborder="none" scrolling="auto" style="width: 100%; height: 100%;"></iframe>
+</div>
+<script>
+    function test(h){
+        document.getElementById("test").style.height = h+"px"
+    }
+    //在父级操作容器高度，这有个问题就是在iframe中的页面有高度改变的时候这里并不会改变
+    /*document.getElementById("ifr").onload = function(){
+     document.getElementById("test").style.height = this.contentWindow.document.body.clientHeight+"px";
+     };*/
+</script>
+</body>
+</html>

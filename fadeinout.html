@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <style type="text/css">
+        .test {
+            height: 100px;
+            width: 100px;
+            background: green;
+            display: none;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="test">你</div>
+<div class="test">好</div>
+<div class="test">啊</div>
+<div class="test">哈</div>
+<button class="show">show</button>
+<button class="hide">hide</button>
+<script type="text/javascript">
+    $(function(){
+        $('.show').on('click',function(){
+            $('.test').first().fadeIn('slow',function showBox(){
+                $(this).next().fadeIn('slow',showBox);
+            })
+        })
+        $('.hide').on('click',function(){
+            $('.test').last().hide('fast',function hideBox(){
+                $(this).prev().hide('fast',hideBox);
+            })
+        })
+    })
+</script>
+</body>
+</html>

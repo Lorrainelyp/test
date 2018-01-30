@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul class="clearfix">
+    <li class="courseList">
+        <div class="titDefault clearfix">
+            <div class="left clearfix">
+                <span class="dragBtn"></span><span class="tit">内容<em class="contIndex">1</em>：</span><em title="2013年 加班.txt" class="titDefaultName">2013年 加班.txt</em>
+            </div>
+            <div class="mid">2014/9/24 9:54:00</div>
+            <div class="right clearfix">
+                <a value="253040" class="moveUpBtn" href="javascript:;"><span class="delTit">上移</span></a>
+                <a value="253040" class="moveDownBtn" href="javascript:;"><span class="delTit">下移</span></a>
+                <a value="253040" class="deleteBtn" href="javascript:;"><span class="delTit">删除</span></a>
+            </div>
+        </div>
+    </li>
+    <li class="courseList">
+        <div class="titDefault clearfix">
+            <div class="left clearfix">
+                <span class="dragBtn"></span><span class="tit">内容<em class="contIndex">2</em>：</span><em title="使用说明.txt" class="titDefaultName">使用说明.txt</em>
+            </div>
+            <div class="mid">2014/9/24 9:54:00</div>
+            <div class="right clearfix">
+                 
+                <a value="253041" class="moveUpBtn" href="javascript:;"><span class="delTit">上移</span></a>
+                <a value="253041" class="moveDownBtn" href="javascript:;"><span class="delTit">下移</span></a>
+                <a value="253041" class="deleteBtn" href="javascript:;"><span class="delTit">删除</span></a>
+            </div>
+        </div>
+    </li>
+    <li class="courseList">
+        <div class="titDefault clearfix">
+            <div class="left clearfix">
+                <span class="dragBtn"></span><span class="tit">内容<em class="contIndex">3</em>：</span><em title="占占大师.txt" class="titDefaultName">占占大师.txt</em>
+            </div>
+            <div class="mid">2014/9/24 9:54:00</div>
+            <div class="right clearfix">
+                <a value="253040" class="moveUpBtn" href="javascript:;"><span class="delTit">上移</span></a>
+                <a value="253040" class="moveDownBtn" href="javascript:;"><span class="delTit">下移</span></a>
+                <a value="253040" class="deleteBtn" href="javascript:;"><span class="delTit">删除</span></a>
+            </div>
+        </div>
+    </li>
+    <li class="courseList">
+        <div class="titDefault clearfix">
+            <div class="left clearfix">
+                <span class="dragBtn"></span><span class="tit">内容<em class="contIndex">4</em>：</span><em title="排序问题.txt" class="titDefaultName">排序问题.txt</em>
+            </div>
+            <div class="mid">2014/9/24 9:54:00</div>
+            <div class="right clearfix">
+                 
+                <a value="253041" class="moveUpBtn" href="javascript:;"><span class="delTit">上移</span></a>
+                <a value="253041" class="moveDownBtn" href="javascript:;"><span class="delTit">下移</span></a>
+                <a value="253041" class="deleteBtn" href="javascript:;"><span class="delTit">删除</span></a>
+            </div>
+        </div>
+    </li>
+</ul>
+</body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    $(function () {
+//上移
+        $(".clearfix").on("click", ".moveUpBtn", function () {
+            var self = $(this);
+            var _old = self.closest("li.courseList");
+            var _new = self.closest("li.courseList").prev("li");
+            if (_new.length > 0) {
+                var _temp = _old.html();
+                _old.empty().append(_new.html());
+                _new.empty().append(_temp);
+            }
+
+        });
+
+//下移
+        $(".clearfix").on("click", ".moveDownBtn", function () {
+            var self = $(this);
+            var _old = self.closest("li.courseList");
+            var _new = self.closest("li.courseList").next("li");
+            if (_new.length > 0) {
+                var _temp = _old.html();
+                _old.empty().append(_new.html());
+                _new.empty().append(_temp);
+            }
+        });
+
+//删除
+        $(".clearfix").on("click", ".deleteBtn", function () {
+            var self = $(this);//当前click事件源对象
+            self.closest("li.courseList").remove();
+        });
+
+    });
+</script>
+</html>
